@@ -48,7 +48,7 @@ class OnboardingScreen2 extends StatelessWidget {
                 ),
               ),
             ),
-            // Placeholder for Image
+            // Placeholder for Imageas
             Expanded(
               child: Center(
                 child: Image.asset(

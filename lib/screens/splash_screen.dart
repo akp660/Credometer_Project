@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'onboarding_screen_2.dart';
+// import 'package:flutter_svg/flutter_svg.dart'; // Removed flutter_svg import
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -24,17 +25,33 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue, // Example background color
+      backgroundColor: const Color(0xFF2C42A7), // Setting background color to 2C42A7
       body: Center(
-        child: Text(
-          'Splash Screen',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min, // Center the row content
+          children: [
+            // Icon Image
+            Image.asset(
+              'assets/images/splash_screen_icon.png', // Path to your icon image
+              height: 100.0, // Image size
+            ),
+            const SizedBox(width: 10), // Spacing between image and text
+            // App name text with padding for alignment
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0), // Add top padding to lower the text
+              child: const Text(
+                'eduflow',
+                style: TextStyle(
+                  color: Colors.white, // Text color for visibility on dark blue
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Scheherazade New', // Set font family
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
-} 
+}
